@@ -1,5 +1,5 @@
 import GameRound from "./GameRound";
-import readline from 'readline/promises'
+import readline from 'readline'
 
 export default class Game {
   private gameRounds: GameRound[] = []
@@ -19,10 +19,9 @@ export default class Game {
   private get currentRound() {
     return this.gameRounds[this.gameRounds.length - 1]
   }
-
   printPuzzle() {
-    const [v0, v1, v3] = this.currentRound.sequence
-    console.log(`Find the solution to: ${v0} ${v1} _ ${v3}`)
+    const [v0,v1,v3] = this.currentRound.sequence
+    console.log(`Find the solution to: ${v0} ${v1} _${v3}`)
   }
 
   async playRound() {
